@@ -1,0 +1,29 @@
+package na;
+import java.util.*;
+
+public class karprekar_num {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sqr = n * n;
+        int temp = sqr;
+        int count = 0;
+
+        // Count number of digits in square
+        while (temp != 0) {
+            temp = temp / 10;
+            count++;
+        }
+
+        int pow = (int)Math.pow(10, Math.ceil(count / 2f));
+        int n1 = sqr / pow;
+        int n2 = sqr % pow;
+        int sum = n1 + n2;
+
+        if (sum == n) {
+            System.out.println("Karprekar Number");
+        } else {
+            System.out.println("Not a Karprekar Number");
+        }
+    }
+}
