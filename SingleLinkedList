@@ -1,0 +1,52 @@
+import java.util.*;
+class Node{
+
+	int data;
+	Node next;
+	
+	Node (int data){
+		this.data=data;
+	}
+}
+class  SingleLinked{
+	Node head;
+	
+     public void InsertAt(int data){
+		Node newnode=new Node(data);
+		if(head==null) {
+			head=newnode;
+			return;
+		}
+		
+		Node curr=head;
+		
+		while(curr.next!=null) {
+			curr=curr.next;
+		}
+		curr.next=newnode;
+	}
+    public void display() {
+    	 Node curr=head;
+    	 while(curr!=null) {
+    		 System.out.print(curr.data+" ");
+    		 curr=curr.next;
+    	 }
+     }
+}
+
+public class Gain{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner (System.in);
+		 SingleLinked s=new  SingleLinked();
+		int num;
+		while(true) {
+			num=sc.nextInt();
+			if(num==-1) {
+				break;
+			}
+			s.InsertAt(num);
+		}
+         s.display();
+	}
+
+}
